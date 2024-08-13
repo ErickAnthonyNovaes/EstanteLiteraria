@@ -7,9 +7,25 @@ body {
     display: flex;
 }
 
+h1,h2 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+p {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.paragrafo-inicio {
+    text-align: justify;
+    font-size: 20px;
+    background-color: #3b3a3057;
+    margin: 10px;
+    padding: 30px;
+}
+
 nav {
     background-color: #333;
-    width: 200px;
+    width: 150px;
     height: 100vh;
     position: fixed;
     top: 0;
@@ -43,7 +59,7 @@ nav ul li a {
 nav ul li a:hover {
     background-color: #5e2129;
     border: 6px solid #333;
-    width: 11.2pc;
+    width: 8pc;
 }
 
 .content {
@@ -75,12 +91,16 @@ main {
 }
 
 #login-section {
-    background-color: #fff;
+    background-color: #ffffff57;
     border: 1px solid #ccc;
     border-radius: 5px;
     display: inline-block;
     padding: 30px;
-    margin-top: 80px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 74pc;
+    align-items: center;
+    height: 24.4pc;
 }
 
 #login-form {
@@ -90,7 +110,7 @@ main {
 }
 
 #login-form label, #login-form input, #login-form button {
-    margin: 5px 0;
+    margin: 20px 0;
 }
 
 #login-form input, #login-form button {
@@ -104,11 +124,23 @@ main {
     background-color: #8a795d;
     color: #fff;
     cursor: pointer;
-    width: 100px;
+    width: 20pc;
+    height: 4pc;
 }
 
-#login-form button:hover {
-    background-color: #5e2129;
+#login-form button:focus {
+    animation: buttonF 1.2s forwards;
+}
+
+@keyframes buttonF {
+    from {
+        background-color: #41181e;
+        color: #d3c7c7;
+    }
+    to {
+        background-color: #8a795d;
+        color: #fff;
+    }
 }
 
 .book-container {
