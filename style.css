@@ -1,0 +1,149 @@
+body {
+    font-family: 'Georgia', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5dc;
+    color: #3b3a30;
+    display: flex;
+}
+
+nav {
+    background-color: #333;
+    width: 200px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+}
+
+nav ul li {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+nav ul li a {
+    display: block;
+    color: #f5f5dc;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+    width: 100%;
+}
+
+nav ul li a:hover {
+    background-color: #5e2129;
+    border: 6px solid #333;
+    width: 11.2pc;
+}
+
+.content {
+    margin-left: 200px; /* Ajuste a margem esquerda para a largura da barra lateral */
+    padding: 20px;
+    width: calc(100% - 200px); /* Ajuste a largura do conteúdo para não ultrapassar a barra lateral */
+}
+
+header {
+    background-color: #8a795d;
+    color: #f5f5dc;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3em;
+}
+
+header p {
+    margin: 10px 0 0;
+    font-size: 1.2em;
+}
+
+main {
+    text-align: center;
+    padding: 20px;
+}
+
+#login-section {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 30px;
+    margin-top: 80px;
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#login-form label, #login-form input, #login-form button {
+    margin: 5px 0;
+}
+
+#login-form input, #login-form button {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#login-form button {
+    background-color: #8a795d;
+    color: #fff;
+    cursor: pointer;
+    width: 100px;
+}
+
+#login-form button:hover {
+    background-color: #5e2129;
+}
+
+.book-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.book-button {
+    display: block;
+    width: 200px; /* Ajuste a largura conforme necessário */
+    height: 300px; /* Ajuste a altura conforme necessário */
+    background-color: #f5f5dc;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.book-button:hover {
+    box-shadow: 1px 1px 20px 20px #0000008f;
+    animation: Livro 2s forwards;
+}
+
+@keyframes Livro {
+    to {
+        width: 230px;
+        height: 350px;
+    }
+    
+}
+
+.book-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
