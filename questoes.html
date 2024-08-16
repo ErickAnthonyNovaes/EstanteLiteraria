@@ -12,9 +12,48 @@
             <li><a href="index.html">Início</a></li>
             <li><a href="livros.html">Livros</a></li>
             <li><a href="questoes.html">Questões</a></li>
+            <li><p href="#" id="logout" class="restricted"></p></li>
         </ul>
     </nav>
-    <h1>Questões</h1>
-    <p>Conteúdo sobre questões...</p>
+    <div class="content">
+        <div id="login-section">
+            <h2>Login</h2>
+            <form id="login-form">
+                <label for="username">Usuário:</label>
+                <input type="text" id="username" required>
+                <button type="submit">Entrar</button>
+            </form>
+        </div>
+        <div class="questao-titulo">
+            <h1 style="font-size: 3pc;">Questões</h1>
+            <p>Aqui você encontrará um diversidade de questões sobre os livros contidos em nosso site, para você aprender mais sobre os livros ou só para se divertir.</p>
+        </div>
+        <br>
+        <div id="book-selection">
+            <label for="book-select" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"><strong>Escolha um livro:</strong></label>
+            <select id="book-select">
+                <option value="">Selecione...</option>
+                <option value="crime-do-padre-amaro">O Crime do Padre Amaro</option>
+                <!-- Adicione outras opções de livros aqui -->
+            </select>
+        </div>
+        <div id="quiz-container" style="display:none;">
+            <p><b style="font-size: 30px;">Questão:</b> (UEMS) Considerando-se os cenários, ou ambientes, em que se passam os acontecimentos narrados em O crime do padre Amaro, é <i><b>CORRETO</b></i> afirmar que eles,</p>
+            <form id="quiz-form">
+                <label for="option1"><input type="radio" id="option1" name="quiz" value="A" style="width: 10px; cursor: pointer; transform: scale(1.5);"> parecem distorcidos, porque resultam da mistura de sonho com realidade.</label><br>
+                <label for="option2"><input type="radio" id="option2" name="quiz" value="B" style="width: 10px; cursor: pointer; transform: scale(1.5);"> importam apenas à medida que ressoam no interior das personagens. </label><br>
+                <label for="option3"><input type="radio" id="option3" name="quiz" value="C" style="width: 10px; cursor: pointer; transform: scale(1.5);"> representam alegoricamente o drama vivido pelos personagens Amaro e Amélia.</label><br>
+                <label for="option4"><input type="radio" id="option4" name="quiz" value="D" style="width: 10px; cursor: pointer; transform: scale(1.5);"> são objetivamente descritos e, neles, cada personagem desempenha seu papel.</label><br>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+    <div id="result-message">
+        <p id="result-text"></p>
+    </div>
+    <audio id="correct-sound" src="confetti-pop-sound-effect.mp3" preload="auto"></audio>
+    <audio id="incorrect-sound" src="070-challenge-lose.mp3" preload="auto"></audio>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
