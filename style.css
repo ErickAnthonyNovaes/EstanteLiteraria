@@ -1,10 +1,17 @@
-body {
-    font-family: 'Georgia', serif;
+/* Reseta margens e paddings */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos gerais */
+body {
+    font-family: 'Georgia', serif;
     background-color: #f5f5dc;
     color: #b1b0aa;
     display: flex;
+    flex-direction: row; /* Mudança aqui para alinhar nav e conteúdo */
 }
 
 h1, h2 {
@@ -21,25 +28,12 @@ p {
     background-color: #3b3a30cb;
     margin: 10px;
     padding: 30px;
-    border-radius: 1pc;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.paragrafo-inicio:hover {
-    animation: paragrafo 1.5s forwards;
-}
-
-@keyframes paragrafo {
-    to {
-        background-color: #817f7fb8;
-        color: #ffffff;
-    }
+    border-radius: 10px;
 }
 
 nav {
     background-color: #333;
-    width: 12.3pc;
+    width: 200px;
     height: 100vh;
     position: fixed;
     top: 0;
@@ -47,7 +41,7 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 20px;
+    padding: 20px 0;
 }
 
 nav ul {
@@ -58,35 +52,27 @@ nav ul {
 
 nav ul li {
     width: 100%;
+    text-align: center;
     margin-bottom: 10px;
 }
 
 nav ul li a {
     display: block;
     color: #f5f5dc;
-    text-align: center;
     padding: 14px;
     text-decoration: none;
-    width: 10.2pc;
+    width: 100%;
 }
 
 nav ul li a:hover {
     background-color: #5e2129;
 }
 
+/* Conteúdo */
 .content {
-    margin-left: 200px; /* Ajuste a margem esquerda para a largura da barra lateral */
-    padding: 30px;
-    width: calc(100% - 200px); /* Ajuste a largura do conteúdo para não ultrapassar a barra lateral */
-}
-
-.titulo-livros {
-    background-image: linear-gradient(90deg, #ffffff00,  #c6c1b98c, #6b5d479c, #ffffff00);
-    color: #f5f5dc;
-    text-align: center;
-    padding: 30px 20px;
-    margin: 0;
-    font-size: 3em;
+    margin-left: 200px; /* Ajuste para margem esquerda igual à largura da nav */
+    padding: 20px;
+    width: calc(100% - 200px);
 }
 
 header {
@@ -98,7 +84,7 @@ header {
 
 header h1 {
     margin: 0;
-    font-size: 3em;
+    font-size: 2.5em;
 }
 
 header p {
@@ -117,13 +103,9 @@ main {
     border-radius: 5px;
     display: inline-block;
     padding: 30px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 40pc;
-    align-items: center;
-    height: 24.4pc;
+    margin: 10px auto;
+    max-width: 500px;
+    width: 100%;
 }
 
 #login-form {
@@ -133,7 +115,7 @@ main {
 }
 
 #login-form label, #login-form input, #login-form button {
-    margin: 20px 0;
+    margin: 10px 0;
 }
 
 #login-form input, #login-form button {
@@ -147,8 +129,78 @@ main {
     background-color: #8a795d;
     color: #fff;
     cursor: pointer;
-    width: 20pc;
-    height: 4pc;
+    width: 100%;
+}
+
+.book-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.book-button {
+    display: block;
+    width: 150px;
+    height: 200px;
+    background-color: #f5f5dc;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    overflow: hidden;
+    text-decoration: none;
+    margin: 10px;
+}
+
+.book-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Media queries para responsividade */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    nav {
+        width: 100%;
+        height: auto;
+        position: relative;
+        flex-direction: row;
+    }
+
+    nav ul {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .content {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    #login-section {
+        max-width: 90%;
+    }
+
+    .book-button {
+        width: 120px;
+        height: 160px;
+    }
+}
+
+/* Animações e efeitos visuais */
+.paragrafo-inicio:hover {
+    animation: paragrafo 1.5s forwards;
+}
+
+@keyframes paragrafo {
+    to {
+        background-color: #817f7fb8;
+        color: #ffffff;
+    }
 }
 
 #login-form button:focus {
@@ -166,24 +218,6 @@ main {
     }
 }
 
-.book-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.book-button {
-    display: block;
-    width: 200px; /* Ajuste a largura conforme necessário */
-    height: 300px; /* Ajuste a altura conforme necessário */
-    background-color: #f5f5dc;
-    border: 2px solid #000000;
-    border-radius: 5px;
-    overflow: hidden;
-    text-decoration: none;
-}
-
 .book-button:hover {
     box-shadow: 1px 1px 20px 20px #0000008f;
     animation: Livro 2s forwards;
@@ -196,13 +230,6 @@ main {
     }
 }
 
-.book-button img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Estilo para o container do quiz */
 #quiz-container {
     background-color: #ad9d83ea;
     border: 1px solid #8b8b8b;
@@ -217,7 +244,6 @@ main {
     color: #000000;
 }
 
-/* Estilo para o formulário do quiz */
 #quiz-form {
     display: flex;
     flex-direction: column;
@@ -257,13 +283,6 @@ main {
     }
 }
 
-/* Estilo para o resultado do quiz */
-#quiz-result {
-    margin-top: 20px;
-    font-size: 1.2em;
-}
-
-/* Estilo para a mensagem de resultado */
 #result-message {
     display: none;
     position: fixed;
@@ -292,14 +311,13 @@ main {
 }
 
 #book-select {
-    width: 25pc;
+    width: 100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    height: 2.2pc;
-    margin-left: 30px;
+    padding: 10px;
+    margin: 10px 0;
     cursor: pointer;
     background-color: #ffffff5d;
     border: none;
-    margin-left: 110px;
 }
 
 #book-select:focus-visible {
@@ -315,10 +333,10 @@ main {
 #book-selection {
     background-image: linear-gradient(90deg, #ffffff00, #3b3a3038, #ffffff00);
     padding: 10px;
-    border-radius: 1pc;
-    width: 40pc;
-    margin-left: auto;
-    margin-right: auto;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
 }
 
 .questao-titulo {
@@ -353,22 +371,27 @@ table {
     border-collapse: collapse;
     margin: 20px 0;
 }
+
 table, th, td {
     border: 1px solid #000000;
     padding: 8px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 th {
     background-color: #8a795d;
     color: rgb(255, 255, 255);
 }
+
 tr {
     background-color: #8a795d8f;
     color: #ffffff;
 }
+
 tr:hover {
     background-color: #8a795ddb;
 }
+
 .content h1, .content p {
     text-align: center;
 }
@@ -387,14 +410,20 @@ td {
 }
 
 .ler-livro {
-    margin-left: 23pc;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 10px;
     background-color: #8a795d;
     color: #fff;
     cursor: pointer;
-    width: 28pc;
-    height: 4pc;
-    font-size: 30px;
+    width: 100%;
+    max-width: 600px;
+    padding: 15px;
+    font-size: 1.5em;
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    border-radius: 5px;
 }
 
 .ler-livro:hover {
