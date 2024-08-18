@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f5f5dc;
-    color: #3b3a30;
+    color: #b1b0aa;
     display: flex;
 }
 
@@ -18,10 +18,23 @@ p {
 .paragrafo-inicio {
     text-align: justify;
     font-size: 20px;
-    background-color: #3b3a3032;
+    background-color: #3b3a30cb;
     margin: 10px;
     padding: 30px;
     border-radius: 1pc;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.paragrafo-inicio:hover {
+    animation: paragrafo 1.5s forwards;
+}
+
+@keyframes paragrafo {
+    to {
+        background-color: #817f7fb8;
+        color: #ffffff;
+    }
 }
 
 nav {
@@ -63,12 +76,21 @@ nav ul li a:hover {
 
 .content {
     margin-left: 200px; /* Ajuste a margem esquerda para a largura da barra lateral */
-    padding: 20px;
+    padding: 30px;
     width: calc(100% - 200px); /* Ajuste a largura do conteúdo para não ultrapassar a barra lateral */
 }
 
+.titulo-livros {
+    background-image: linear-gradient(90deg, #ffffff00,  #c6c1b98c, #6b5d479c, #ffffff00);
+    color: #f5f5dc;
+    text-align: center;
+    padding: 30px 20px;
+    margin: 0;
+    font-size: 3em;
+}
+
 header {
-    background-color: #8a795d;
+    background-image: linear-gradient(50deg, #020204, #020204, #6b5d47, #6b5d47, #020204, #020204);
     color: #f5f5dc;
     text-align: center;
     padding: 30px 20px;
@@ -182,8 +204,8 @@ main {
 
 /* Estilo para o container do quiz */
 #quiz-container {
-    background-color: #ffffff57;
-    border: 1px solid #ccc;
+    background-color: #ad9d83ea;
+    border: 1px solid #8b8b8b;
     border-radius: 5px;
     padding: 20px;
     margin: 20px auto;
@@ -192,6 +214,7 @@ main {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 25px;
+    color: #000000;
 }
 
 /* Estilo para o formulário do quiz */
@@ -206,7 +229,7 @@ main {
 }
 
 #quiz-form button {
-    background-color: #8a795d;
+    background-color: #6b5d46;
     color: #fff;
     cursor: pointer;
     padding: 10px;
@@ -220,7 +243,7 @@ main {
 }
 
 #quiz-form button:focus {
-    animation: buttonQuiz 1.2s forwards;
+    animation: buttonQuiz 0.5s forwards;
 }
 
 @keyframes buttonQuiz {
@@ -245,7 +268,7 @@ main {
     display: none;
     position: fixed;
     top: 50%;
-    left: 50%;
+    left: 55%;
     transform: translate(-50%, -50%);
     padding: 20px;
     width: 250px;
@@ -255,11 +278,13 @@ main {
 }
 
 #result-message.correct {
-    background-color: rgba(0, 128, 0, 0.496);
+    background-color: rgba(0, 128, 0, 0.679);
+    color: #fff;
 }
 
 #result-message.incorrect {
-    background-color: rgba(255, 0, 0, 0.521);
+    background-color: rgba(255, 0, 0, 0.575);
+    color: #000000;
 }
 
 .blurred {
@@ -272,20 +297,23 @@ main {
     height: 2.2pc;
     margin-left: 30px;
     cursor: pointer;
+    background-color: #ffffff5d;
+    border: none;
+    margin-left: 110px;
 }
 
 #book-select:focus-visible {
-    animation: bookSelection 2s forwards;
+    animation: bookSelection 0.5s forwards;
 }
 
 @keyframes bookSelection {
     to {
-        background-color: #e3e3e3;
+        background-color: #ffffff;
     }
 }
 
 #book-selection {
-    background-color: #3b3a3063;
+    background-image: linear-gradient(90deg, #ffffff00, #3b3a3038, #ffffff00);
     padding: 10px;
     border-radius: 1pc;
     width: 40pc;
@@ -294,9 +322,8 @@ main {
 }
 
 .questao-titulo {
-    background-color: #8a795d;
+    background-image: linear-gradient(90deg, #f5f5dc00,  #6b5d47de, #6b5d47, #ffffff00);
     color: #f5f5dc;
-    text-align: center;
     padding: 30px 20px;
 }
 
@@ -319,4 +346,63 @@ main {
 
 .result-gif.correct {
     display: block;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+table, th, td {
+    border: 1px solid #000000;
+    padding: 8px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+th {
+    background-color: #8a795d;
+    color: rgb(255, 255, 255);
+}
+tr {
+    background-color: #8a795d8f;
+    color: #ffffff;
+}
+tr:hover {
+    background-color: #8a795ddb;
+}
+.content h1, .content p {
+    text-align: center;
+}
+
+td {
+    font-size: 20px;
+}
+
+.titulo-explicacoes {
+    background-image: linear-gradient(90deg, #f5f5dc00,  #6b5d47bf, #6b5d47b8, #f5f5dc00);
+    color: #f5f5dc;
+    text-align: center;
+    padding: 30px 20px;
+    margin: 0;
+    font-size: 3em;
+}
+
+.ler-livro {
+    margin-left: 23pc;
+    margin-top: 10px;
+    background-color: #8a795d;
+    color: #fff;
+    cursor: pointer;
+    width: 28pc;
+    height: 4pc;
+    font-size: 30px;
+}
+
+.ler-livro:hover {
+    animation: lerlivro 0.5s forwards;
+}
+
+@keyframes lerlivro {
+    to {
+        background-color: #85653a;
+    }
 }

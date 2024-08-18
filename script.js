@@ -85,7 +85,7 @@ function showResultMessage(type, message) {
 function launchConfetti() {
     var count = 200;
 var defaults = {
-  origin: { y: 0.7 }
+  origin: { y: 0.6, x: 0.6 }
 };
 
 function fire(particleRatio, opts) {
